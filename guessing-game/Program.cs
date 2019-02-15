@@ -6,6 +6,7 @@ namespace guessing_game
 {
     class Program
     {
+        const int maxNumber = 250;
         static string nameOfGamer;
         const string messageToSayBye = "Bye.";
         const string messageAboutWrongNumber = "Enter a number from 0 to ";
@@ -15,7 +16,6 @@ namespace guessing_game
         static string[] frazes = {", patience.", ", do not give up.",
              ", you will succeed.", ", victory does not far away."};
         static Random rand = new Random();
-        const int maxNumber = 50;
         static DateTime start;
         static void Main(string[] args)
         {
@@ -55,14 +55,14 @@ namespace guessing_game
             counter++;
             if(number > secretNumber) {
                 history.Add(-number);
-                Console.WriteLine("More");
+                Console.WriteLine("Lot");
                 if(counter % 4 == 0 && counter != 0) {
                     writeFraze();
                 }
                 return false;
             }
             else if(number < secretNumber) {
-                Console.WriteLine("Less");
+                Console.WriteLine("Few");
                 if (counter % 4 == 0 && counter != 0) {
                     writeFraze();
                 }
@@ -85,10 +85,10 @@ namespace guessing_game
                 foreach (int item in history) {
                     Console.Write($"{Math.Abs(item)}   ");
                     if(item >= 0) {
-                        Console.WriteLine("Less");
+                        Console.WriteLine("Few");
                     }
                     else {
-                        Console.WriteLine("More");
+                        Console.WriteLine("Lot");
                     }
                 }
             }
