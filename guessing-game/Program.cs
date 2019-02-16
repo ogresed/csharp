@@ -6,7 +6,7 @@ namespace guessing_game
 {
     class Program
     {
-        const int maxNumber = 250;
+        const int maxNumber = 50;
         static string nameOfGamer;
         const string messageToSayBye = "Bye.";
         const string messageAboutWrongNumber = "Enter a number from 0 to ";
@@ -78,7 +78,7 @@ namespace guessing_game
             }
         }
         static void showHistory() {
-            if(counter == 0) {
+            if(counter == 1) {
                 Console.WriteLine("On the first try!");
             } else {
                 Console.WriteLine($"Аttempts {counter}");
